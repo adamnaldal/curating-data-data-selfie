@@ -1,9 +1,9 @@
 class day {
-  constructor(_date,_xPosition){
+  constructor(_date,_xPosition,_ads,_unfollows,_activity){
     this.date = _date;
-    this.ads = []; //an array of add objects
-    this.unfollows = [];
-    this.activity = 1;
+    this.ads = _ads; //an array of add objects
+    this.unfollows = _unfollows;
+    this.activity = _activity;
     this.xPosition = _xPosition;
   }
 

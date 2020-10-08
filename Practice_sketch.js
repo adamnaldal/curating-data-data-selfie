@@ -10,53 +10,59 @@ let adYJump = 1.1
 let unfollowsYJump = 1.2
 
 function preload(){
-  payload = loadJSON('payload-0.json');
+  payload = loadJSON('data_selfie_processed.json');
 }
 
 function setup() {
   textSize(18);
   colorMode(HSB,100);
 
-  for (each of payload[0].data.client_side_ad_analytics) {
-    adsServed.push(each)
-  } // load ads i have been served
-
-  for (each of payload[0].data.unfollows) {
-    unfollows.push(each)
-  } //load blogs i have unfollowed
-
-  activity = payload[0].data.last_active_times //load every time i have been active on tumblr
-  activity.sort()
-
-  console.log("data collected")
-
- //Create alla date objects
-  for (i = 0; i<activity.length; i++){
-    if (i>0){
-      if (activity[i].slice(0,10) == lastActivity.slice(0,10)){
-        days[days.length-1].activity++
-      } else {
-        days.push(new day(activity[i].slice(0,10),days.length*xSpacing))
-      }
-    } else {
-      days.push(new day(activity[i].slice(0,10),days.length*xSpacing))
-    }
-    lastActivity = activity[i];
+  for (each of payload.days){
+    days.push(new day(each.date, each.xPosition, each.ads, each.unfollows, each.activity))
   }
 
-  console.log("day objects initialised")
+ //  for (each of payload[0].data.client_side_ad_analytics) {
+ //    adsServed.push(each)
+ //  } // load ads i have been served
+ //
+ //  for (each of payload[0].data.unfollows) {
+ //    unfollows.push(each)
+ //  } //load blogs i have unfollowed
+ //
+ //  activity = payload[0].data.last_active_times //load every time i have been active on tumblr
+ //  activity.sort()
+ //
+ //  console.log("data collected")
+ //
+ // //Create alla date objects
+ //  for (i = 0; i<activity.length; i++){
+ //    if (i>0){
+ //      if (activity[i].slice(0,10) == lastActivity.slice(0,10)){
+ //        days[days.length-1].activity++
+ //      } else {
+ //        days.push(new day(activity[i].slice(0,10),days.length*xSpacing))
+ //      }
+ //    } else {
+ //      days.push(new day(activity[i].slice(0,10),days.length*xSpacing))
+ //    }
+ //    lastActivity = activity[i];
+ //  }
+ //
+ //  console.log("day objects initialised")
+ //
+ //  //add ads and unfollows to date objects
+ //  for (each of days){
+ //    each.collectAds()
+ //  }
+ //  console.log("ads added")
+ //
+ //  //add unfollows to days
+ //  for (each of days){
+ //    each.collectUnfollows()
+ //  }
+ //  console.log("unfollows added")
 
-  //add ads and unfollows to date objects
-  for (each of days){
-    each.collectAds()
-  }
-  console.log("ads added")
-
-  //add unfollows to days
-  for (each of days){
-    each.collectUnfollows()
-  }
-  console.log("unfollows added")
+  //saveJSON(days, "data_selfie_processed.json")
 
   createCanvas(days.length*xSpacing+100, 700)
 }
