@@ -1,0 +1,1241 @@
+{
+  "$id": "https://www.tumblr.com/subject_user:6dfff72856295ff2386e02137b554418d4aa8eccbec8f0e5eeb41a3f147ef880#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "security": "high",
+  "schemaType": "subjectAccessRequest",
+  "title": "Logged in schema",
+  "description": "Tumblr subjectAccessRequest schema",
+  "additionalProperties": false,
+  "properties": {
+    "user_age": {
+      "title": "Your age",
+      "description": "Your age according to the birth year you provided",
+      "type": "string"
+    },
+    "email": {
+      "title": "Account email address",
+      "description": "The email address currently associated with your account",
+      "type": "string"
+    },
+    "user_language": {
+      "title": "Current user-set language",
+      "description": "The language currently associated with your account",
+      "type": "string"
+    },
+    "registration_time": {
+      "title": "Date and time of registration",
+      "description": "This is when you first joined Tumblr",
+      "type": "string"
+    },
+    "last_post_time": {
+      "title": "Your last post creation time",
+      "description": "The timestamp of the last post made on your account, including any secondary blogs",
+      "type": "string"
+    },
+    "user_stratum": {
+      "title": "User type",
+      "description": "How we categorize you based on information you provide us, such as your engagement history and registration time",
+      "type": "string"
+    },
+    "crushers": {
+      "title": "Blogs that interacted with you the most",
+      "description": "Blogs that engaged with your blog's contents the most",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "blog_name": {
+            "type": "string",
+            "title": "Blog name",
+            "description": "The name of a blog that interacted with your blog's contents the most"
+          }
+        }
+      }
+    },
+    "crushes": {
+      "title": "Blogs most interacted with",
+      "description": "The blogs you loved and engaged with the most",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "blog_name": {
+            "type": "string",
+            "title": "Blog name",
+            "description": "The name of the blog you interacted with the most"
+          }
+        }
+      }
+    },
+    "highlighted_posts": {
+      "title": "Highlighted posts",
+      "description": "The top posts for your blogs, shown on blog cards, based on other users' engagement",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "blog_name": {
+            "type": "string",
+            "title": "Blog name",
+            "description": "The name of your blog"
+          },
+          "post_urls": {
+            "type": "array",
+            "title": "Content URLs",
+            "description": "When available, direct URLs of content contained within element",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "most_used_tags": {
+      "title": "Your most used tags",
+      "description": "The tags used most often on each of your blogs",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "blog_name": {
+            "type": "string",
+            "title": "Blog name",
+            "description": "The name of your blog"
+          },
+          "tag": {
+            "type": "string",
+            "title": "Tag",
+            "description": "Tag used by you"
+          },
+          "tag_count": {
+            "type": "string",
+            "title": "Number of times used",
+            "description": "How many times you've used this tag"
+          }
+        }
+      }
+    },
+    "most_important_tags": {
+      "title": "The most unique tags used on your blogs",
+      "description": "The most unique tags used on your blogs and surfaced by searches",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "blog_name": {
+            "type": "string",
+            "title": "Blog name",
+            "description": "The name of your blog"
+          },
+          "tag": {
+            "type": "string",
+            "title": "Tag",
+            "description": "Tag used by you"
+          }
+        }
+      }
+    },
+    "user_interest_profiles": {
+      "title": "Interest profile",
+      "description": "Your interests based on historial data such as post engagements, posts you made, blogs you follow, and more",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "interest": {
+            "type": "string",
+            "title": "Interest",
+            "description": "What we think you're interested in based on your user interest profile"
+          }
+        }
+      }
+    },
+    "mobile_device_oses": {
+      "title": "Mobile device operating systems",
+      "description": "Information about your mobile device",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "os_type": {
+            "type": "string",
+            "title": "Mobile device operating system type",
+            "description": "The type of operating system your device uses"
+          },
+          "os_version": {
+            "type": "string",
+            "title": "Device operation system version",
+            "description": "The version your device operation system is using"
+          },
+          "os_language": {
+            "type": "string",
+            "title": "Device operating system language",
+            "description": "The language your device is set to use"
+          }
+        }
+      }
+    },
+    "api_applications_used": {
+      "title": "API apps used",
+      "description": "The third-party applications you've logged into",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "session_created_time": {
+            "type": "string",
+            "title": "Session creation time",
+            "description": "Date and time of your login"
+          },
+          "session_expiration_time": {
+            "type": "string",
+            "title": "Session expiration time",
+            "description": "Date and time of when the session expired"
+          },
+          "app_name": {
+            "type": "string",
+            "title": "Origin of session",
+            "description": "Name of application used during session"
+          }
+        }
+      }
+    },
+    "api_applications_created": {
+      "title": "API applications created",
+      "description": "The third-party applications you've created",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "app_id": {
+            "title": "Application ID",
+            "description": "Unique identifier of the application",
+            "type": "string"
+          },
+          "admin_email": {
+            "title": "API admin email",
+            "description": "The email address supplied for contact information",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "description": "Title of the application",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "description": "Description of the application",
+            "type": "string"
+          },
+          "play_store_url": {
+            "title": "Google Play Store URL",
+            "description": "Location of the app in the Google Play Store",
+            "type": "string"
+          },
+          "app_store_url": {
+            "title": "Apple App Store URL",
+            "description": "Location of the app in the Apple App Store",
+            "type": "string"
+          },
+          "app_website": {
+            "title": "Application URL",
+            "description": "Location of website for the app",
+            "type": "string"
+          },
+          "callback_url": {
+            "title": "Default callback URL",
+            "description": "OAuth callback URL",
+            "type": "string"
+          },
+          "app_icons": {
+            "title": "Application icons",
+            "description": "Display icons for the application",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "consumer_key": {
+            "title": "Consumer key",
+            "description": "OAuth consumer key",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "blog_names": {
+      "title": "Blog names",
+      "description": "The blogs you have created",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "current_blog_name": {
+            "title": "Current blog name",
+            "description": "The name of the blog as it currently exists",
+            "type": "string"
+          },
+          "prev_used_blog_name": {
+            "title": "Previously used blog names",
+            "description": "The blog names that were used before the current blog name",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "labs_experiments": {
+      "title": "Tumblr Labs experiments enabled",
+      "description": "The Tumblr Labs experiments and their options you have enabled",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "experiment_name": {
+            "title": "Experiment name",
+            "description": "The name of the experiment you have enabled",
+            "type": "string"
+          },
+          "experiment_options": {
+            "title": "Experiment options",
+            "description": "Individual experiment options you have enabled, if any",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "login_logout_times": {
+      "title": "Login and logout times",
+      "description": "When you've logged in and out",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Login or logout",
+            "description": "Whether we're tracking a login or logout action"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Date and time",
+            "description": "Date and time of when the login or logout happened"
+          },
+          "platform": {
+            "type": "string",
+            "title": "Platform",
+            "description": "The device or platform you were using when logging in or logging out"
+          }
+        }
+      }
+    },
+    "dashboard": {
+      "title": "Historic content on dashboard",
+      "description": "Everything you have been served on your dashboard in the order of when you saw it",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "serve_time": {
+            "type": "string",
+            "title": "Serve time",
+            "description": "What time this content element was served",
+            "format": "string"
+          },
+          "element_type": {
+            "type": "string",
+            "title": "Element type",
+            "description": "The type of content element"
+          },
+          "content_url": {
+            "type": "string",
+            "title": "Content URL",
+            "description": "When available, direct URL of the post"
+          },
+          "platform": {
+            "type": "string",
+            "title": "Platform name",
+            "description": "The device or platform you were using when served this content element"
+          }
+        }
+      }
+    },
+    "geo_profiles": {
+      "title": "Geo profiles",
+      "description": "Where you were when you performed certain actions on Tumblr. Logged for product and performance analysis",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "title": "City",
+            "description": "The city we think you were in when you performed the action"
+          },
+          "state": {
+            "type": "string",
+            "title": "State/Province",
+            "description": "The state or province we think you were in when you performed the action"
+          },
+          "country": {
+            "type": "string",
+            "title": "Country",
+            "description": "The country we think you were in when you performed the action"
+          }
+        }
+      }
+    },
+    "last_active_times": {
+      "title": "Last active",
+      "description": "The dates and times you were active on Tumblr",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ads_analytics": {
+      "title": "Native Tumblr premium post analytics event",
+      "description": "User events on posts created by Tumblr premium partners",
+      "items": {
+        "type": "object",
+        "properties": {
+          "post_url": {
+            "title": "Post URL",
+            "description": "Post URL you were served",
+            "type": "string"
+          },
+          "placement_id": {
+            "title": "Ad ID",
+            "description": "If this was an ad, the ID assigned to that ad",
+            "type": "string"
+          },
+          "serve_time": {
+            "title": "Serve time",
+            "description": "Date and time indicating the time the post was served",
+            "type": "string"
+          },
+          "viewed": {
+            "title": "Viewed",
+            "description": "If you viewed the post",
+            "type": "string"
+          },
+          "interacted": {
+            "title": "Interacted",
+            "description": "If you interacted with the post",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "gemini_analytics": {
+      "title": "Tumblr non-post ad analytics event",
+      "description": "User events on non-post ads",
+      "items": {
+        "type": "object",
+        "properties": {
+          "placement_id": {
+            "title": "Ad ID",
+            "description": "The ID of the ad",
+            "type": "string"
+          },
+          "serve_time": {
+            "title": "Serve time",
+            "description": "Date and time indicating the time the ad was served",
+            "type": "string"
+          },
+          "viewed": {
+            "title": "Viewed",
+            "description": "If you viewed the ad",
+            "type": "string"
+          },
+          "interacted": {
+            "title": "Interacted",
+            "description": "If you interacted with the ad",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "client_side_ad_analytics": {
+      "title": "Client-Side Ad Analytics Event",
+      "description": "User events on non-native Tumblr ads",
+      "items": {
+        "type": "object",
+        "properties": {
+          "placement_id": {
+            "title": "Alternative Serve ID",
+            "description": "Another unique ID of the specific instance of the ad you interacted with",
+            "type": "string"
+          },
+          "ad_type": {
+            "title": "Ad type",
+            "description": "The type of Ad served",
+            "type": "string"
+          },
+          "client_side_placement_id": {
+            "title": "Ad section ID",
+            "description": "The unique ID of the pool of ads from which this ad was requested",
+            "type": "string"
+          },
+          "serve_time": {
+            "title": "Serve time",
+            "description": "Date and time indicating the time the ad was served",
+            "type": "string"
+          },
+          "viewed": {
+            "title": "Viewed",
+            "description": "If you viewed the ad",
+            "type": "string"
+          },
+          "interacted": {
+            "title": "Interacted",
+            "description": "If you interacted with the ad",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "explore_takeover_analytics": {
+      "title": "Explore Takeover analytics events",
+      "description": "Events fired for interactions with posts that were featured in a Sponsored Day or Answer Time (one event per action per running takeover)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "post_url": {
+            "title": "Post URL",
+            "description": "Post URL you were served",
+            "type": "string"
+          },
+          "takeover_id": {
+            "title": "Explore takeover ID",
+            "description": "The ID of the Explore Takeover this banner was a part of",
+            "type": "string"
+          },
+          "takeover_context": {
+            "title": "Explore takeover screen ID",
+            "description": "The ID of the Explore Takeover where the interaction occurred",
+            "type": "string"
+          },
+          "tracked_unit": {
+            "title": "Element type",
+            "description": "The type of content element",
+            "type": "string"
+          },
+          "serve_time": {
+            "title": "Serve time",
+            "description": "Date and time indicating the time the post was served",
+            "type": "string"
+          },
+          "viewed": {
+            "title": "Viewed",
+            "description": "If you viewed the post",
+            "type": "string"
+          },
+          "interacted": {
+            "title": "Interacted",
+            "description": "If you interacted with the post",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "explore_takeover_misc_analytics": {
+      "title": "Explore takeover banner events",
+      "description": "Events fired for interactions with Sponsored Day and Answer Time banners",
+      "items": {
+        "type": "object",
+        "properties": {
+          "placement_id": {
+            "title": "Alternative Serve ID",
+            "description": "Another unique ID of the specific instance of the ad you interacted with",
+            "type": "string"
+          },
+          "ad_type": {
+            "title": "Ad type",
+            "description": "The type of Ad served",
+            "type": "string"
+          },
+          "client_side_placement_id": {
+            "title": "Ad section ID",
+            "description": "The unique ID of the pool of ads from which this ad was requested",
+            "type": "string"
+          },
+          "serve_time": {
+            "title": "Serve time",
+            "description": "Date and time indicating the time the ad was served",
+            "type": "string"
+          },
+          "viewed": {
+            "title": "Viewed",
+            "description": "If you viewed the ad",
+            "type": "string"
+          },
+          "interacted": {
+            "title": "Interacted",
+            "description": "If you interacted with the ad",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "email_ads_surveys": {
+      "title": "Ad surveys",
+      "description": "Email surveys that were sent to you after viewing an ad",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "group": {
+            "title": "Ad group",
+            "description": "The user group you are bucketed into based on your interactions with an ad",
+            "type": "string"
+          },
+          "email": {
+            "title": "Your email",
+            "description": "The email address we sent surveys to",
+            "type": "string"
+          },
+          "post_id": {
+            "title": "Post ID",
+            "description": "The ID of the post used as an Ad",
+            "type": "string"
+          },
+          "survey_url": {
+            "title": "Survey URL",
+            "description": "The URL of the survey contained in the email sent to you",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "act_chats": {
+      "title": "Chats actions",
+      "description": "Actions you took in Group Chats",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "title": "Date and time",
+            "description": "The date and time you took the chats action",
+            "type": "string"
+          },
+          "action": {
+            "title": "Action",
+            "description": "What action you performed",
+            "type": "string"
+          },
+          "geo": {
+            "title": "Geo",
+            "description": "Where your request came from",
+            "type": "string"
+          },
+          "lang": {
+            "title": "Language",
+            "description": "What language we determined you wanted",
+            "type": "string"
+          },
+          "chat_name": {
+            "title": "Chat Name",
+            "description": "The name of the chat you took this action in",
+            "type": "string"
+          },
+          "blog_name": {
+            "title": "Blog Name",
+            "description": "The name of the blog you took this action with",
+            "type": "string"
+          },
+          "platform": {
+            "title": "Platform",
+            "description": "Which mobile app platform you were on",
+            "type": "string"
+          },
+          "extra_logging_info": {
+            "title": "Extra Info",
+            "description": "Any other miscellaneous data about this action",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "granular_settings_toggle": {
+      "title": "Granular Settings Toggle",
+      "description": "When you switch the value of one of several settings in the app",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "blog_name": {
+            "title": "Blog",
+            "description": "The actual blog name that the toggled setting affects",
+            "type": "string"
+          },
+          "meta_key": {
+            "title": "Setting Key",
+            "description": "The key name for the setting toggled",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "description": "The value this setting was toggled to",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "push_notification_opens": {
+      "title": "Push notification opens",
+      "description": "Opened the app via a push notification",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "title": "Date and time",
+            "description": "The date and time you opened the push notification",
+            "type": "string"
+          },
+          "from_blog": {
+            "title": "Blog origin",
+            "description": "The blog that triggered the push notification",
+            "type": "string"
+          },
+          "to_blog": {
+            "title": "Blog destination",
+            "description": "The blog that received the push notification",
+            "type": "string"
+          },
+          "notification_type": {
+            "title": "Notification type",
+            "description": "The type of push notification that was received",
+            "type": "string"
+          },
+          "device": {
+            "title": "Device",
+            "description": "The type of device that received the push notification",
+            "type": "string"
+          },
+          "follow_up_action": {
+            "title": "Follow-up action",
+            "description": "The first action performed after opening the push notification",
+            "type": "string"
+          },
+          "app_version": {
+            "title": "App version",
+            "description": "The version of the Tumblr app that received the push notification",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "push_notification_settings": {
+      "title": "Push Notification Settings",
+      "description": "Your device level settings change events",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "title": "Date and time",
+            "description": "The date and time when the setting was changed",
+            "type": "string"
+          },
+          "setting": {
+            "title": "Setting name",
+            "description": "The name of the setting that was changed",
+            "type": "string"
+          },
+          "value": {
+            "title": "Setting value",
+            "description": "The value the setting was changed to",
+            "type": "string"
+          },
+          "device": {
+            "title": "Device",
+            "description": "The device platform that changed the setting (iOS/Android)",
+            "type": "string"
+          },
+          "app_version": {
+            "title": "App version",
+            "description": "The version of the Tumblr app that changed the setting",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "push_notification_sent": {
+      "title": "Push notification sent",
+      "description": "Push notifications we have attempted to send you",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "title": "Date and time",
+            "description": "The date and time we attempted to send you a push notification",
+            "type": "string"
+          },
+          "from_blog": {
+            "title": "Blog origin",
+            "description": "The blog that triggered the push notification",
+            "type": "string"
+          },
+          "to_blog": {
+            "title": "Blog destination",
+            "description": "The blog that received the push notification",
+            "type": "string"
+          },
+          "post_id": {
+            "title": "Post ID",
+            "description": "The ID of the post the push notification pertains to",
+            "type": "string"
+          },
+          "push_id": {
+            "title": "Push id",
+            "description": "The unique push notification id",
+            "type": "string"
+          },
+          "notification_type": {
+            "title": "Notification type",
+            "description": "The type of push notification that was received",
+            "type": "string"
+          },
+          "sequence_number": {
+            "title": "Sequence number",
+            "description": "Ordering of attempted pushes for multiple devices",
+            "type": "string"
+          },
+          "service_type": {
+            "title": "Service type",
+            "description": "Service used for attempted push notification",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "app_feedback": {
+      "title": "Feedback",
+      "description": "Feedback you have given about the mobile apps",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "title": "Date and time",
+            "description": "Date and time of feedback submission",
+            "type": "string"
+          },
+          "platform": {
+            "title": "Platform",
+            "description": "Which mobile app platform you were on",
+            "type": "string"
+          },
+          "version": {
+            "title": "Version",
+            "description": "Which app version you used to submit the feedback",
+            "type": "string"
+          },
+          "feedback": {
+            "title": "Feedback",
+            "description": "The actual feedback you submitted",
+            "type": "string"
+          },
+          "response": {
+            "title": "Response",
+            "description": "Whether we received the feedback successfully in our support system",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unfollows": {
+      "title": "Unfollows",
+      "description": "Blogs you have unfollowed",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "blog_name": {
+            "title": "Blog name",
+            "description": "Blog that was unfollowed",
+            "type": "string"
+          },
+          "timestamp": {
+            "title": "Date and time",
+            "description": "Date and time of unfollowing",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "blog_backups": {
+      "title": "Blog backups",
+      "description": "Backups of your blog(s)",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "title": "Date and time",
+            "description": "Date and time of blog backup request",
+            "type": "string"
+          },
+          "blog_name": {
+            "title": "Blog name",
+            "description": "Blog that requested a blog backup",
+            "type": "string"
+          },
+          "status": {
+            "title": "Blog backup status",
+            "description": "Status of the blog backup",
+            "type": "string"
+          },
+          "backup_link": {
+            "title": "Blog backup link",
+            "description": "Link to the blog backup download",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ugcLinks": {
+      "type": "array",
+      "additionalItems": false,
+      "items": [{
+        "type": "object",
+        "title": "Tumblr Content Download",
+        "description": "Download your Tumblr content",
+        "properties": {
+          "link": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }]
+    },
+    "bcookie_mapping": {
+      "title": "Mobile and Web IDs For Advertising",
+      "description": "The user trackers needed for targeting advertising",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Blog name",
+            "description": "Your blog name",
+            "type": "string"
+          },
+          "advertising_id": {
+            "title": "Advertising ID",
+            "description": "Your mobile ID For Advertising",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "chatReports": {
+      "type": "array",
+      "title": "Chat Reports",
+      "description": "Reports made against chats for violations",
+      "items": {
+        "type": "object",
+        "properties": {
+          "blog_name": {
+            "title": "Blog name",
+            "description": "Your blog name",
+            "type": "string"
+          },
+          "timestamp": {
+            "title": "Date and time",
+            "description": "The date and time you reported this chat",
+            "type": "string"
+          },
+          "report_type": {
+            "title": "Report type",
+            "description": "The type of report this was",
+            "type": "string"
+          },
+          "chat_url": {
+            "title": "Chat URL",
+            "description": "The URL of the chat you reported",
+            "type": "string"
+          },
+          "chat_name": {
+            "title": "Chat name",
+            "description": "The name of the chat you reported",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "adminData": {
+      "type": "object",
+      "title": "Admin Data",
+      "description": "More sensitive data",
+      "properties": {
+        "attempted_pushes": {
+          "title": "Attempted Pushes",
+          "description": "Push notifications we have attempted to send you",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "title": "Date and time",
+                "description": "The data and time we attempted to send you a push notification",
+                "type": "string"
+              },
+              "from_blog": {
+                "title": "Blog origin",
+                "description": "The blog that triggered the push notification",
+                "type": "string"
+              },
+              "to_blog": {
+                "title": "Blog destination",
+                "description": "The blog that received the push notification",
+                "type": "string"
+              },
+              "post_id": {
+                "title": "Post ID",
+                "description": "The ID of the post the push notification pertains to",
+                "type": "string"
+              },
+              "notification_type": {
+                "title": "Notification type",
+                "description": "The type of push notification that was received",
+                "type": "string"
+              },
+              "sequence_number": {
+                "title": "Sequence number",
+                "description": "Ordering of attempted pushes for multiple devices",
+                "type": "string"
+              },
+              "service_type": {
+                "title": "Service type",
+                "description": "Service used for attempted push notification",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "browser_info": {
+          "title": "Browser info",
+          "description": "Information we have collected about your browser sessions",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ip_address": {
+                "title": "IP address",
+                "description": "IP address that initiated the request",
+                "type": "string"
+              },
+              "user_agent": {
+                "title": "User-Agent",
+                "description": "User-Agent that reports information about your browser",
+                "type": "string"
+              },
+              "referrer": {
+                "title": "Referrer",
+                "description": "The previous page visited",
+                "type": "string"
+              },
+              "request_uri": {
+                "title": "Request URI",
+                "description": "Page visited",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "client_side_logs": {
+          "title": "Client-side event logs",
+          "description": "How you engaged with the site and apps",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "title": "Date and time",
+                "description": "Date and time of the action",
+                "type": "string"
+              },
+              "action_name": {
+                "title": "Action name",
+                "description": "The action you've performed, such as liking or making a post",
+                "type": "string"
+              },
+              "action_details": {
+                "title": "Action details",
+                "description": "The details associated with the action",
+                "type": "object"
+              },
+              "client_platform": {
+                "title": "Client platform",
+                "description": "The originating platform from which the action took place",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "client_side_performance_logs": {
+          "title": "Client-side performance logs",
+          "description": "How the site and apps performed for you",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "title": "Date and time",
+                "description": "Date and time of the action",
+                "type": "string"
+              },
+              "action_name": {
+                "title": "Action name",
+                "description": "The action you've performed, such as liking or making a post",
+                "type": "string"
+              },
+              "action_details": {
+                "title": "Action details",
+                "description": "The details associated with the action",
+                "type": "object"
+              },
+              "client_platform": {
+                "title": "Client platform",
+                "description": "The originating platform from which the action took place",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "experiment_bucketing": {
+          "title": "Experiment bucketing",
+          "description": "The experiments being shown to you at any given time",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "feature_name": {
+                "title": "Feature name",
+                "description": "The name of the feature that was enabled",
+                "type": "string"
+              },
+              "feature_subgroup": {
+                "title": "Feature subgroup",
+                "description": "The subgroup of the feature",
+                "type": "string"
+              },
+              "enabled_timestamp": {
+                "title": "Feature enabled",
+                "description": "Date and time of when the feature was enabled for you",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "ip_addresses": {
+          "title": "IP addresses",
+          "description": "The last five IP address used",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "posts_served_searching": {
+          "title": "Posts served when searching",
+          "description": "What you were served when you searched for something on Tumblr",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "action_taken": {
+                "type": "string",
+                "title": "Action taken",
+                "description": "The action you performed on Tumblr"
+              },
+              "engagement_action_taken": {
+                "type": "string",
+                "title": "Engagement action",
+                "description": "Further specification of action you've taken, if the action taken is an engagement action"
+              },
+              "post_url": {
+                "type": "string",
+                "title": "Post URL",
+                "description": "Post URL you were served"
+              },
+              "blog_name": {
+                "type": "string",
+                "title": "Blog name",
+                "description": "Blog name you were served"
+              },
+              "search_query": {
+                "type": "string",
+                "title": "Search query",
+                "description": "The search query you made"
+              },
+              "safe_search": {
+                "type": "string",
+                "title": "Safe Search",
+                "description": "Your 'Safe Search' setting"
+              },
+              "post_search_result_rank": {
+                "type": "string",
+                "title": "Post's search result rank",
+                "description": "A Tumblr-generated 'rank' of the post you were served"
+              },
+              "first_page": {
+                "type": "string",
+                "title": "First page of results",
+                "description": "Whether or not the served post was found on the first pagination"
+              },
+              "timestamp": {
+                "type": "string",
+                "title": "Date and time",
+                "description": "Date and time of the search query"
+              },
+              "platform": {
+                "type": "string",
+                "title": "Platform",
+                "description": "The device or platform you were using when performing the search query"
+              }
+            }
+          }
+        },
+        "requests_made": {
+          "title": "Requests made",
+          "description": "Every URI requested via the Tumblr mobile app, tumblr.com visit, or third party app",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "title": "Date and time",
+                "description": "When this request was received by Tumblr's servers"
+              },
+              "request_url": {
+                "type": "string",
+                "title": "Request URL",
+                "description": "The host and path of this HTTP request"
+              },
+              "user_agent": {
+                "type": "string",
+                "title": "User-Agent",
+                "description": "Information as supplied by your operating device"
+              },
+              "ip_address": {
+                "type": "string",
+                "title": "IP address",
+                "description": "IP address used to make the request"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
