@@ -8,6 +8,7 @@ let xSpacing = 2.2
 let activityYJump = 2
 let adYJump = 1.1
 let unfollowsYJump = 1.2
+let doubleTally = 0
 
 function preload(){
   payload = loadJSON('data_selfie_processed.json');
@@ -64,6 +65,11 @@ function setup() {
 
   //saveJSON(days, "data_selfie_processed.json")
 
+  for (each of days){
+    doubleTally += each.activity
+  }
+  console.log(doubleTally, days.length)
+
   createCanvas(days.length*xSpacing+100, 700)
 }
 
@@ -75,21 +81,21 @@ function draw(){
   }
 
   push()
-  textSize(16)
+  textSize(14)
   fill(10,100,100,100)
-  text("Ads served:", 40, 40);
+  text("Ads served (37099 – 100%)", 40, 40);
   fill(5,100,100,80)
-  text("Ads i viewed", 50, 55);
+  text("Ads I viewed (4188 – 11.28%)", 50, 55);
   fill(0,100,100,100)
-  text("Ads i interacted with" , 50, 70);
+  text("Ads I interacted with (489 – 1.31%)" , 50, 70);
   fill(90,100,100,100)
-  text("Ads i viewed and interacted with", 50, 85)
+  text("Ads I viewed and interacted with (141 – 0.38%)", 50, 85)
 
   fill(45,100,75,100)
-  text("Blogs i unfollowed", 40, 120)
+  text("Blogs i unfollowed (261)", 40, 120)
 
   fill(70,100,100,70)
-  text("Activity", 40, 155)
+  text("Active sessions (2775 over 1730 days)", 40, 155)
   pop()
 
   for (each of days){
